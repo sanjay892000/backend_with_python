@@ -1,0 +1,209 @@
+.section{
+
+    padding:100px 0;
+
+}
+
+.container{
+
+    width:min(90%,1280px);
+
+    margin:auto;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.section-title{
+
+    font-size:clamp(2rem,5vw,3rem);
+
+    color:#111827;
+
+    margin-bottom:18px;
+
+}
+
+.section-description{
+
+    color:#6b7280;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.categories{
+
+    background:#f8fafc;
+
+}
+
+.categories-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+.category-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.category-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:#16a34a;
+
+    transform:scaleX(0);
+
+    transition:.35s;
+
+}
+
+.category-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.category-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 18px 40px rgba(22,163,74,.18);
+
+}
+
+.category-icon{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:3rem;
+
+    background:#f0fdf4;
+
+    transition:.4s;
+
+}
+
+.category-card:hover .category-icon{
+
+    transform:rotate(12deg) scale(1.15);
+
+    background:#dcfce7;
+
+}
+
+.category-card h3{
+
+    margin:28px 0 12px;
+
+    font-size:1.4rem;
+
+    color:#111827;
+
+}
+
+.category-card p{
+
+    color:#6b7280;
+
+    font-size:.95rem;
+
+}
+
+@media(max-width:768px){
+
+    .section{
+
+        padding:70px 0;
+
+    }
+
+    .categories-grid{
+
+        gap:20px;
+
+    }
+
+    .category-card{
+
+        padding:35px 20px;
+
+    }
+
+}

@@ -1,0 +1,123 @@
+{% extends "base.html" %} {% load static %} {% block title %} Training Studio -
+Classess Page{% endblock %} {% block content %}
+
+<section id="our-classes" class="bg-slate-100 py-30">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Heading -->
+    <div class="mx-auto mb-12 max-w-3xl text-center">
+      <h2 class="text-4xl mb-5 font-extrabold text-slate-900 md:text-5xl">
+        Our <span class="text-orange-500">Classes</span>
+      </h2>
+
+      <p class="text-lg leading-8 text-slate-600">
+        Choose the perfect training program designed to help you achieve your
+        fitness goals with expert trainers.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="grid gap-10 lg:grid-cols-12">
+      <!-- Left Sidebar -->
+      <div class="lg:col-span-4">
+        <div class="space-y-5">
+          {% for item in trainings %}
+          <a
+            href="{% url "classes_detail" item.id %}"
+            class="{% if selected.id == item.id %} bg-orange-500 text-white {% else %} bg-white {% endif %} flex items-center gap-4 rounded-2xl border border-slate-200 p-5 shadow-sm transition duration-300 hover:border-orange-500 hover:shadow-lg"
+          >
+            <img
+              src="{% static 'images/tabs-first-icon.png' %}"
+              class="h-12 w-12 bg-white p-2 rounded-lg"
+              alt=""
+            />
+
+            <span class="font-semibold">
+              {{item.title}}
+            </span>
+          </a>
+
+          {% endfor %}
+           {% comment %}
+          <a
+            href="#tabs-2"
+            class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:border-orange-500 hover:shadow-lg"
+          >
+            <img
+              src="{% static 'images/tabs-first-icon.png' %}"
+              class="h-12 w-12"
+              alt=""
+            />
+
+            <span class="font-semibold text-slate-800">
+              Second Training Class
+            </span>
+          </a>
+
+          <a
+            href="#tabs-3"
+            class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:border-orange-500 hover:shadow-lg"
+          >
+            <img
+              src="{% static 'images/tabs-first-icon.png' %}"
+              class="h-12 w-12"
+              alt=""
+            />
+
+            <span class="font-semibold text-slate-800">
+              Third Training Class
+            </span>
+          </a>
+
+          <a
+            href="#tabs-4"
+            class="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:border-orange-500 hover:shadow-lg"
+          >
+            <img
+              src="{% static 'images/tabs-first-icon.png' %}"
+              class="h-12 w-12"
+              alt=""
+            />
+
+            <span class="font-semibold text-slate-800">
+              Fourth Training Class
+            </span>
+          </a>
+          {% endcomment %}
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div class="lg:col-span-8">
+        <div class="overflow-hidden rounded-3xl bg-white shadow-xl">
+          <img
+            src="{% static selected.image %}"
+            alt=""
+            class="h-56 w-full itemect-cover"
+          />
+
+          <div class="py-4 px-8">
+            <h3 class="mb-5 text-2xl font-bold text-slate-900">
+              {{selected.title}}
+            </h3>
+
+            <p class="leading-6 text-sm text-slate-600">
+              Phasellus convallis mauris sed elementum vulputate. Donec posuere
+              leo sed dui eleifend hendrerit. Sed suscipit erat sed vehicula
+              ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida
+              aliquam nunc.{{selected.desc}}
+            </p>
+
+            <a
+              href="#"
+              class="mt-8 inline-block rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+            >
+              View Schedule
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

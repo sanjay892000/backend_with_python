@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Signup-myNoteBook {% endblock title %}
+
+{% block content %}
+<section class="min-h-screen bg-gray-100 px-4 py-10 sm:px-6 lg:px-8">
+  <div class="mx-auto w-full max-w-lg">
+
+    <!-- Card -->
+    <div class="rounded-2xl p-6 sm:p-8">
+
+      <!-- Heading -->
+      <div class="mb-8 text-center">
+        <h1 class="text-3xl font-bold text-gray-900">
+          Create an <span class="text-rose-600">Account</span>
+        </h1>
+
+        <p class="mt-2 text-sm text-gray-500">
+          Sign up to get started with your account.
+        </p>
+      </div>
+
+      {% include "labels/alerts.html" %}
+
+
+      <!-- Signup Form -->
+      <form
+        method="POST"
+        action="{% url 'signup' %}"
+        class="space-y-5"
+      >
+
+        {% csrf_token %}
+
+
+        <!-- First Name + Last Name -->
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+          <!-- First Name -->
+          <div>
+            <label
+              for="first_name"
+              class="mb-2 block text-sm font-medium text-gray-700"
+            >
+              First Name
+              <span class="text-rose-500">*</span>
+            </label>
+
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              placeholder="John"
+              autocomplete="given-name"
+              required
+              class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-rose-500 focus:ring-4 focus:ring-rose-100"
+            />
+          </div>
+
+
+          <!-- Last Name -->
+          <div>
+            <label
+              for="last_name"
+              class="mb-2 block text-sm font-medium text-gray-700"
+            >
+              Last Name
+              <span class="text-rose-500">*</span>
+            </label>
+
+            <input
+              type="text"
+              name="last_name"
+              id="last_name"
+              placeholder="Doe"
+              autocomplete="family-name"
+              required
+              class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-rose-500 focus:ring-4 focus:ring-rose-100"
+            />
+          </div>
+
+        </div>
+
+
+        <!-- Email -->
+        <div>
+          <label
+            for="email"
+            class="mb-2 block text-sm font-medium text-gray-700"
+          >
+            Email Address
+            <span class="text-rose-500">*</span>
+          </label>
+
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="john@example.com"
+            autocomplete="email"
+            required
+            class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-rose-500 focus:ring-4 focus:ring-rose-100"
+          />
+        </div>
+
+
+        <!-- Password -->
+        <div>
+          <label
+            for="password"
+            class="mb-2 block text-sm font-medium text-gray-700"
+          >
+            Password
+            <span class="text-rose-500">*</span>
+          </label>
+
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            required
+            class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-rose-500 focus:ring-4 focus:ring-rose-100"
+          />
+        </div>
+
+
+        <!-- Confirm Password -->
+        <div>
+          <label
+            for="confirm_password"
+            class="mb-2 block text-sm font-medium text-gray-700"
+          >
+            Confirm Password
+            <span class="text-rose-500">*</span>
+          </label>
+
+          <input
+            type="password"
+            name="confirm_password"
+            id="confirm_password"
+            placeholder="Confirm your password"
+            autocomplete="new-password"
+            required
+            class="w-full rounded-lg border border-gray-300 bg-white/50 px-4 py-3 text-sm text-gray-800 outline-none transition placeholder:text-gray-400 focus:border-rose-500 focus:ring-4 focus:ring-rose-100"
+          />
+        </div>
+
+
+        <!-- Signup Button -->
+        <button
+          type="submit"
+          class="w-full rounded-lg bg-rose-600 px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-600/20 transition duration-300 hover:-translate-y-0.5 hover:bg-rose-700 focus:outline-none focus:ring-4 focus:ring-rose-200"
+        >
+          Create Account
+        </button>
+
+      </form>
+
+
+      <!-- Divider -->
+      <div class="my-7 flex items-center gap-4">
+        <div class="h-px flex-1 bg-gray-200"></div>
+
+        <span class="text-xs font-medium text-gray-400">
+          OR CONTINUE WITH
+        </span>
+
+        <div class="h-px flex-1 bg-gray-200"></div>
+      </div>
+
+
+      <!-- Social Buttons -->
+      <div class="grid grid-cols-3 gap-3">
+
+        <!-- Google -->
+        <button
+          type="button"
+          aria-label="Sign up with Google"
+          class="flex items-center justify-center rounded-lg border border-gray-200 p-3 transition hover:border-rose-300 hover:bg-rose-50"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            class="h-5 w-5 fill-current text-rose-500"
+          >
+            <path
+              d="M16.318 13.714v5.484h9.078c-.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182C24.251 1.584 20.641 0 16.318 0 7.474 0 .318 7.151.318 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-.115-1.854-.255-2.651z"
+            />
+          </svg>
+        </button>
+
+
+        <!-- Twitter -->
+        <button
+          type="button"
+          aria-label="Sign up with Twitter"
+          class="flex items-center justify-center rounded-lg border border-gray-200 p-3 transition hover:border-rose-300 hover:bg-rose-50"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            class="h-5 w-5 fill-current text-rose-500"
+          >
+            <path
+              d="M31.937 6.093c-1.177.516-2.437.871-3.765 1.032 1.355-.813 2.391-2.099 2.885-3.631-1.271.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 .521.063 1.021.172 1.495-5.453-.255-10.287-2.875-13.52-6.833-.568.964-.891 2.084-.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-.031-2.083-.328-2.968-.817v.079c0 3.181 2.26 5.833 5.26 6.437-.547.145-1.131.229-1.724.229-.421 0-.823-.041-1.224-.115.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-.521 0-1.041-.025-1.563-.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-.276 0-.557-.021-.839 1.287-.917 2.401-2.079 3.281-3.396z"
+            />
+          </svg>
+        </button>
+
+
+        <!-- GitHub -->
+        <button
+          type="button"
+          aria-label="Sign up with GitHub"
+          class="flex items-center justify-center rounded-lg border border-gray-200 p-3 transition hover:border-rose-300 hover:bg-rose-50"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 32 32"
+            class="h-5 w-5 fill-current text-rose-500"
+          >
+            <path
+              d="M16 .396C7.16.396 0 7.563 0 16.396c0 7.073 4.584 13.068 10.937 15.183.803.151 1.093-.344 1.093-.772 0-.38-.009-1.385-.015-2.719-4.453.964-5.391-2.151-5.391-2.151-.729-1.844-1.781-2.339-1.781-2.339-1.448-.989.115-.968.115-.968 1.604.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328.14-1.031.557-1.74 1.011-2.135-3.552-.401-7.287-1.776-7.287-7.907 0-1.751.62-3.177 1.645-4.297-.177-.401-.719-2.031.141-4.235 0 0 1.339-.427 4.4 1.641 1.281-.355 2.641-.532 4-.541 1.36.009 2.719.187 4 .541 3.043-2.068 4.381-1.641 4.381-1.641.859 2.204.317 3.833.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891.556.479 1.077 1.464 1.077 2.959 0 2.14-.02 3.864-.02 4.385 0 .416.28.916 1.104.755C27.421 29.464 32 23.464 32 16.396 32 7.563 24.839.396 16 .396z"
+            />
+          </svg>
+        </button>
+
+      </div>
+
+
+      <!-- Login -->
+      <p class="mt-7 text-center text-sm text-gray-500">
+        Already have an account?
+
+        <a
+          href="{% url 'login' %}"
+          class="font-semibold text-rose-600 underline-offset-4 hover:underline"
+        >
+          Login
+        </a>
+      </p>
+
+    </div>
+  </div>
+</section>
+{% endblock content %}

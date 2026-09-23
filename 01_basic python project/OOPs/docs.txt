@@ -1,0 +1,92 @@
+Python - OOP's
+================
+Object-Oriented Programming empowers developers to build modular and scalable application.
+OOP is a way to organize code that uses class and objects to represent real world entities and thier behaviors.
+
+# organizes code into class and objects.
+# support encapsulation to group data and methods together.
+# enables inheritance for reusability and hierarchy.
+# allows polymorphism for flexible method implementation.
+# improves modularity, scalability and maintainability.
+
+Python - Class
+================
+it is blueprint/prototype for creating objects.
+A class defines a set of attributes and methods that the created object(instance) can have.
+
+# class are created using 'class' keyword.
+# attributes are the variables that belong to a class.
+# attributes are always public and can be accessed by/using dot(.)
+# MyClass.my_attribute
+
+Python - Objects
+=================
+An object is the instance of a class. it represents a specific implementation of the class and holds its own data.
+
+State: it is represented by the attribute and reflect the property of an object.
+Behavior: it is represented by the method/function of an object and reflect the response of an object to other object.
+Identity: it gives a unique name to an object and enables one object to interact with other objects.
+
+Python - Inheritance
+=====================
+It allows a class(child class) to inherit attributes and methods from another class(parent class).
+
+1. Single level Inheritance
+===========================
+it enables a derived class to inherit properties from a single parent class.
+
+2. Multiple Inheritance
+==========================
+When a class can be derived from more than one base class, is called multiple inheritance.
+
+3. Multi-level Inheritance
+============================
+the base class further inherited into the new derived class.
+
+4. Hierarchical Inheritance
+==============================
+when more than one derived class are created from a single base class.
+
+5. Hybrid Inheritance
+=========================
+combination any two or more.
+
+Python - super()
+-------------------
+it is used to call methods from parent class inside child class.
+
+Python - MRO(Method Order Resolution)
+--------------------------------------
+it defines the order in which Python searches for a method in a class and its parent class.
+
+Python - Access Modifiers
+============================
+it controls which part of a class can be accessed/region so it could get or not.
+
+public: default. for all
+private: start with double underscore(__).
+protected: start with single underscore(_).
+
+Python - Encapsulation
+========================
+it is used to bind/wrap the data members and methods into a single unit.
+
+Python - Polymorphism
+----------------------
+it means 'many forms'. it refers to the ability of an entity to perform different actions based on the context.
+
+iot allows the same methods to behave differently depending on objects.
+
+1. Method Overloading(Compile-time polymorphism): it means deciding which method or operation run during compile time.
+
+2. Method Overriding(Run-time polymorphism): it means that the behaviour of a method is decided while program is running.
+
+Python - Abstraction
+=====================
+it means showing only essential features and hiding the complex internal details.
+
+Abstract Base Class(ABC): it is used to achieve data abstraction by defining a common interface to its subclass. they are created using ab module, and @abstractmethod decorator.
+
+
+
+

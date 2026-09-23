@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+ {% load static %}
+  {% block title %} Training Studio - Schedule Page{% endblock %}
+{% block content %}
+
+<section id="schedule" class="py-30 bg-slate-100">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Heading -->
+
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <h2 class="text-4xl font-extrabold text-slate-700 md:text-5xl">
+        Classes <span class="text-orange-400">Schedule</span>
+      </h2>
+
+      <img
+        src="{% static 'images/line-dec.png' %}"
+        alt=""
+        class="mx-auto my-6"
+      />
+
+      <p class="text-lg leading-8 text-slate-700">
+        Stay consistent with your workouts by choosing the perfect class that
+        fits your schedule and fitness goals.
+      </p>
+    </div>
+
+    <!-- Day Filter -->
+
+    <div class="mb-12 flex flex-wrap justify-center gap-4">
+      <button
+        class="rounded-full bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-orange-600"
+      >
+        Monday
+      </button>
+
+      <button
+        class="rounded-full border border-slate-600 bg-slate-800 px-6 py-3 font-semibold text-slate-300 transition hover:border-orange-500 hover:text-orange-400"
+      >
+        Tuesday
+      </button>
+
+      <button
+        class="rounded-full border border-slate-600 bg-slate-800 px-6 py-3 font-semibold text-slate-300 transition hover:border-orange-500 hover:text-orange-400"
+      >
+        Wednesday
+      </button>
+
+      <button
+        class="rounded-full border border-slate-600 bg-slate-800 px-6 py-3 font-semibold text-slate-300 transition hover:border-orange-500 hover:text-orange-400"
+      >
+        Thursday
+      </button>
+
+      <button
+        class="rounded-full border border-slate-600 bg-slate-800 px-6 py-3 font-semibold text-slate-300 transition hover:border-orange-500 hover:text-orange-400"
+      >
+        Friday
+      </button>
+    </div>
+
+    <!-- Schedule Table -->
+
+    <div class="overflow-x-auto rounded-3xl bg-slate-800 shadow-2xl">
+      <table class="min-w-full">
+        <thead class="bg-orange-500 text-white">
+          <tr>
+            <th class="px-6 py-5 text-left font-semibold">Class</th>
+
+            <th class="px-6 py-5 text-left font-semibold">Morning</th>
+
+            <th class="px-6 py-5 text-left font-semibold">Evening</th>
+
+            <th class="px-6 py-5 text-left font-semibold">Trainer</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-slate-700 text-slate-300">
+          <!-- Row -->
+
+          <tr class="transition hover:bg-slate-700">
+            <td class="px-6 py-5 font-semibold text-white">Fitness Class</td>
+
+            <td class="px-6 py-5">10:00 AM – 11:30 AM</td>
+
+            <td class="px-6 py-5">2:00 PM – 3:30 PM</td>
+
+            <td class="px-6 py-5">William G. Stewart</td>
+          </tr>
+
+          <!-- Row -->
+
+          <tr class="transition hover:bg-slate-700">
+            <td class="px-6 py-5 font-semibold text-white">Muscle Training</td>
+
+            <td class="px-6 py-5">10:00 AM – 11:30 AM</td>
+
+            <td class="px-6 py-5">2:00 PM – 3:30 PM</td>
+
+            <td class="px-6 py-5">Paul D. Newman</td>
+          </tr>
+
+          <!-- Row -->
+
+          <tr class="transition hover:bg-slate-700">
+            <td class="px-6 py-5 font-semibold text-white">Body Building</td>
+
+            <td class="px-6 py-5">10:00 AM – 11:30 AM</td>
+
+            <td class="px-6 py-5">2:00 PM – 3:30 PM</td>
+
+            <td class="px-6 py-5">Boyd C. Harris</td>
+          </tr>
+
+          <!-- Row -->
+
+          <tr class="transition hover:bg-slate-700">
+            <td class="px-6 py-5 font-semibold text-white">Yoga Training</td>
+
+            <td class="px-6 py-5">10:00 AM – 11:30 AM</td>
+
+            <td class="px-6 py-5">2:00 PM – 3:30 PM</td>
+
+            <td class="px-6 py-5">Hector T. Daigle</td>
+          </tr>
+
+          <!-- Row -->
+
+          <tr class="transition hover:bg-slate-700">
+            <td class="px-6 py-5 font-semibold text-white">
+              Advanced Training
+            </td>
+
+            <td class="px-6 py-5">10:00 AM – 11:30 AM</td>
+
+            <td class="px-6 py-5">2:00 PM – 3:30 PM</td>
+
+            <td class="px-6 py-5">Bret D. Bowers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,358 @@
+/* HEADER*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    transition: .35s ease;
+    padding: 15px;
+}
+
+/* roll Effect */
+
+.header.scrolled {
+    background: rgba(255, 255, 255, .75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+}
+
+
+/*  CONTAINER*/
+
+.container {
+    width: min(1500px, 100%);
+    margin-inline: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+
+/*  NAVBAR*/
+
+.navbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/*  LOGO*/
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .6rem;
+
+    text-decoration: none;
+
+}
+
+.logo__icon {
+
+    font-size: 2rem;
+
+}
+
+.logo__text {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: var(--dark);
+
+}
+
+
+/*  MENU*/
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2.5rem;
+
+    list-style: none;
+
+}
+
+.nav-menu li {
+
+    list-style: none;
+
+}
+
+.nav-menu a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    font-weight: 500;
+
+    transition: .3s;
+
+}
+
+
+/* derline Animation */
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -6px;
+
+    left: 0;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: .35s;
+
+}
+
+.nav-menu a:hover {
+
+    color: var(--primary);
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu .active::after {
+
+    width: 100%;
+
+}
+
+
+/*  RIGHT SECTION*/
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+.login-btn {
+
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+}
+
+.login-btn:hover {
+
+    color: var(--primary);
+
+}
+
+
+/*  BUTTON*/
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .9rem 1.8rem;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    transition: .35s;
+
+    font-weight: 600;
+
+}
+
+.btn-primary {
+
+    background: var(--primary);
+
+    color: #fff;
+
+    box-shadow: 0 8px 20px rgba(22, 163, 74, .25);
+
+}
+
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--secondary);
+
+    box-shadow: 0 12px 25px rgba(22, 163, 74, .4);
+
+}
+
+
+/*  HAMBURGER*/
+
+.menu-toggle {
+
+    width: 40px;
+
+    height: 40px;
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+
+}
+
+.menu-toggle span {
+
+    width: 28px;
+
+    height: 3px;
+
+    background: var(--dark);
+
+    border-radius: 10px;
+
+    transition: .35s;
+
+}
+
+
+/* imation */
+
+.menu-toggle.active span:nth-child(1) {
+
+    transform: translateY(9px) rotate(45deg);
+
+}
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+.menu-toggle.active span:nth-child(3) {
+
+    transform: translateY(-9px) rotate(-45deg);
+
+}
+
+
+/*  MOBILE*/
+
+@media(max-width:992px) {
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+    .nav-actions {
+
+        display: none;
+
+    }
+
+    .nav-menu {
+
+        position: fixed;
+
+        top: 90px;
+
+        left: -100%;
+
+        width: 100%;
+
+        background: #fff;
+
+        flex-direction: column;
+
+        gap: 2rem;
+
+        padding: 2rem;
+
+        box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+        transition: .4s;
+
+    }
+
+    .nav-menu.active {
+
+        left: 0;
+
+    }
+
+}
+
+
+@media(max-width:768px) {
+
+    .navbar {
+
+        height: 75px;
+
+    }
+
+    .logo__text {
+
+        font-size: 1.2rem;
+
+    }
+
+}
+
+
+@media(max-width:480px) {
+
+    .container {
+
+        width: 92%;
+
+    }
+
+    .logo__text {
+
+        display: none;
+
+    }
+
+}

@@ -1,0 +1,203 @@
+<header
+    class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
+
+    <!-- Left -->
+
+    <div class="flex items-center gap-5">
+
+        <!-- Mobile Menu -->
+
+        <button
+            id="sidebarToggle"
+            class="lg:hidden text-slate-700 text-xl">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+        <!-- Search -->
+
+        <div class="relative">
+
+            <input
+                type="text"
+                placeholder="Search..."
+                class="w-80 rounded-xl border
+                       border-slate-300
+                       pl-11 pr-4 py-2
+                       outline-none
+                       focus:ring-2
+                       focus:ring-indigo-500
+                       focus:border-indigo-500">
+
+            <i
+                class="fa-solid fa-magnifying-glass
+                       absolute
+                       left-4
+                       top-3
+                       text-slate-400"></i>
+
+        </div>
+
+    </div>
+
+    <!-- Right -->
+
+    <div
+        class="flex items-center gap-5">
+
+        <!-- Notification -->
+
+        <button
+            class="relative">
+
+            <i
+                class="fa-regular fa-bell
+                       text-xl
+                       text-slate-700"></i>
+
+            <span
+                class="absolute
+                       -top-2
+                       -right-2
+                       bg-red-500
+                       text-white
+                       text-[10px]
+                       rounded-full
+                       w-5
+                       h-5
+                       flex
+                       items-center
+                       justify-center">
+
+                3
+
+            </span>
+
+        </button>
+
+        <!-- Dark Mode -->
+
+        <button
+            id="themeToggle"
+            class="text-xl text-slate-700">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+        <!-- Divider -->
+
+        <div
+            class="w-px h-8 bg-slate-300"></div>
+
+        <!-- User -->
+
+        <div
+            class="relative group">
+
+            <button
+                class="flex items-center gap-3">
+
+                <img
+                    src="https://ui-avatars.com/api/?background=4F46E5&color=fff&name={{ request.user.username }}"
+                    class="w-10 h-10 rounded-full">
+
+                <div class="text-left">
+
+                    <p
+                        class="font-semibold text-slate-700">
+
+                        {{ request.user.username }}
+
+                    </p>
+
+                    <p
+                        class="text-xs text-slate-500">
+
+                        {{ request.user.role }}
+
+                    </p>
+
+                </div>
+
+                <i
+                    class="fa-solid fa-angle-down
+                           text-slate-500"></i>
+
+            </button>
+
+            <!-- Dropdown -->
+
+            <div
+                class="absolute
+                       right-0
+                       mt-3
+                       w-56
+                       bg-white
+                       rounded-xl
+                       shadow-xl
+                       border
+                       border-slate-200
+                       hidden
+                       group-hover:block
+                       overflow-hidden
+                       z-50">
+
+                <a href="#"
+                   class="flex items-center gap-3
+                          px-5 py-3
+                          hover:bg-slate-100">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+                <a href="#"
+                   class="flex items-center gap-3
+                          px-5 py-3
+                          hover:bg-slate-100">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+                <hr>
+
+                <a href="#"
+                   class="flex items-center gap-3
+                          px-5 py-3
+                          hover:bg-red-50
+                          text-red-600">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<script>
+
+const html=document.documentElement;
+
+const btn=document.getElementById("themeToggle");
+
+btn.addEventListener("click",()=>{
+
+    html.classList.toggle("dark");
+
+});
+
+</script>

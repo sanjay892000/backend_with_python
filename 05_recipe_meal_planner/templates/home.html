@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/hero.css' %}" />
+<link rel="stylesheet" href="{% static 'css/categories.css' %}">
+<link rel="stylesheet" href="{% static 'css/featured-recipes.css' %}">
+{% endblock %} 
+
+
+
+{% block content %}
+
+<!-- ================= Hero ================= -->
+
+<section class="hero">
+  <!-- Background Shapes -->
+
+  <div class="hero__shape hero__shape--one"></div>
+  <div class="hero__shape hero__shape--two"></div>
+  <div class="hero__shape hero__shape--three"></div>
+
+  <div class="container hero__container">
+    <!-- Left Content -->
+
+    <div class="hero__content">
+      <span class="hero__badge"> 🍃 Healthy Lifestyle </span>
+
+      <h1 class="hero__title">
+        Plan Your Meals
+        <span>Like Never Before</span>
+      </h1>
+
+      <p class="hero__description">
+        Discover healthy recipes, organize weekly meal plans, generate grocery
+        lists and build a better lifestyle with one smart platform.
+      </p>
+
+      <div class="hero__buttons">
+        <a href="#" class="btn btn-primary"> Explore Recipes </a>
+
+        <a href="#" class="btn btn-outline"> Watch Demo </a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <h2>1500+</h2>
+
+          <span>Recipes</span>
+        </div>
+
+        <div class="stat">
+          <h2>20K+</h2>
+
+          <span>Users</span>
+        </div>
+
+        <div class="stat">
+          <h2>450+</h2>
+
+          <span>Meal Plans</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+
+    <div class="hero__image">
+      <div class="hero__image-wrapper">
+        <img
+          src="{% static 'images/hero-food.png' %}"
+          alt="Healthy Food"
+          class="hero__main-image"
+        />
+
+        <div class="floating-card card-one">🥗 Healthy Salad</div>
+
+        <div class="floating-card card-two">🔥 650 Calories</div>
+
+        <div class="floating-card card-three">⭐ 4.9 Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Categories ================= -->
+
+<section class="categories section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-tag"> Popular Categories </span>
+
+      <h2 class="section-title">Browse By Food Category</h2>
+
+      <p class="section-description">
+        Discover thousands of delicious recipes from every cuisine.
+      </p>
+    </div>
+
+    <div class="categories-grid">
+      <article class="category-card">
+        <div class="category-icon">🥗</div>
+
+        <h3>Healthy</h3>
+
+        <p>320+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🍕</div>
+
+        <h3>Pizza</h3>
+
+        <p>180+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🍜</div>
+
+        <h3>Asian</h3>
+
+        <p>220+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🍔</div>
+
+        <h3>Burger</h3>
+
+        <p>140+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🍰</div>
+
+        <h3>Dessert</h3>
+
+        <p>250+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🥩</div>
+
+        <h3>Protein</h3>
+
+        <p>110+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🥬</div>
+
+        <h3>Vegan</h3>
+
+        <p>165+ Recipes</p>
+      </article>
+
+      <article class="category-card">
+        <div class="category-icon">🥤</div>
+
+        <h3>Drinks</h3>
+
+        <p>95+ Recipes</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% include "components/featured-recipes.html" %}
+
+{% endblock %} {% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% comment %} <script src="{% static 'js/featured-recipes.js' %}"></script> {% endcomment %}
+{% endblock %}

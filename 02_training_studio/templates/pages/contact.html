@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% load static %} {% block title %} Training Studio -
+Contact Page{% endblock %} {% block content %}
+
+<section id="contact-us" class="bg-slate-100 py-30">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Heading -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <h2 class="text-4xl font-extrabold text-slate-900 md:text-5xl">
+        Contact <span class="text-orange-500">Us</span>
+      </h2>
+
+      <p class="mt-6 text-lg leading-8 text-slate-600">
+        Have questions? We'd love to hear from you. Send us a message and we'll
+        respond as soon as possible.
+      </p>
+    </div>
+
+    <div
+      class="grid gap-10 overflow-hidden rounded-3xl bg-white shadow-2xl lg:grid-cols-2"
+    >
+      <!-- Google Map -->
+      <div class="h-[450px] lg:h-full">
+        <iframe
+          src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          class="h-full w-full"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="p-8 md:p-12">
+        <form method="POST" class="space-y-6">
+          {% csrf_token %}
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <label
+                for="name"
+                class="mb-2 block text-sm font-semibold text-slate-700"
+              >
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                class="w-full rounded-xl border border-slate-300 px-5 py-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+                required
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="mb-2 block text-sm font-semibold text-slate-700"
+              >
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john@example.com"
+                class="w-full rounded-xl border border-slate-300 px-5 py-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="subject"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Subject
+            </label>
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Enter subject"
+              class="w-full rounded-xl border border-slate-300 px-5 py-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            />
+          </div>
+
+          <div>
+            <label
+              for="message"
+              class="mb-2 block text-sm font-semibold text-slate-700"
+            >
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Write your message..."
+              class="w-full resize-none rounded-xl border border-slate-300 px-5 py-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-orange-500 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-orange-500/30 transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

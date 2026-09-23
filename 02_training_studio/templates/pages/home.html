@@ -1,0 +1,302 @@
+{% extends "base.html" %} {% load static %} {% block title %} Training Studio -
+Home Page{% endblock %} {% block content %}
+
+<section
+  id="top"
+  class="relative bg-slate-900 min-h-screen w-full overflow-hidden pt-40 pb-26"
+>
+  <!-- Background Video -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 opacity-60 h-full w-full object-cover"
+  >
+    <source src="{% static 'images/gym-video.mp4' %}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/65"></div>
+
+  <!-- Content -->
+  <div
+    class="relative z-10 mx-auto flex h-full max-w-7xl items-center justify-center px-6"
+  >
+    <div class="max-w-4xl text-center">
+      <!-- Small Heading -->
+      <span
+        class="mb-5 inline-block rounded-full border border-orange-400/30 bg-orange-500/10 px-5 py-2 text-sm font-semibold uppercase tracking-[4px] text-orange-400"
+      >
+        Work Harder • Get Stronger
+      </span>
+
+      <!-- Main Heading -->
+      <h1
+        class="text-3xl font-extrabold leading-tight text-white md:text-4xl lg:text-5xl"
+      >
+        Build Your Dream Body
+        <span class="block text-6xl text-orange-400">With Training Studio {{person.add}}</span>
+      </h1>
+
+      <!-- Description -->
+      <p
+        class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl"
+      >
+        Transform your body and mind with professional trainers, modern
+        equipment, personalized workout plans, and a motivating fitness
+        community. {{title}}
+      </p>
+
+      <!-- Buttons -->
+      <div
+        class="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row"
+      >
+        <a
+          href="#features"
+          class="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+        >
+          Become a Member
+        </a>
+
+        <a
+          href="#classes"
+          class="rounded-xl border border-white/30 bg-white/10 px-8 py-4 font-semibold text-white backdrop-blur-md transition duration-300 hover:border-orange-400 hover:bg-white/20"
+        >
+          Explore Classes
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-16 grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+        <div>
+          <h3 class="text-3xl font-bold text-orange-400">10K+</h3>
+          <p class="mt-2 text-slate-300">Members</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-orange-400">25+</h3>
+          <p class="mt-2 text-slate-300">Expert Trainers</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-orange-400">50+</h3>
+          <p class="mt-2 text-slate-300">Fitness Programs</p>
+        </div>
+
+        <div>
+          <h3 class="text-3xl font-bold text-orange-400">24/7</h3>
+          <p class="mt-2 text-slate-300">Support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Down -->
+  {% comment %}
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white"
+  >
+    <a href="#features">
+      <i class="fa-solid fa-angles-down text-2xl"></i>
+    </a>
+  </div>
+  {% endcomment %}
+</section>
+
+<section id="trainers" class="bg-slate-50 py-24">
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Heading -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <h2 class="text-4xl font-extrabold text-slate-900 md:text-5xl">
+        Expert <span class="text-orange-500">Trainers</span>
+      </h2>
+
+      <img
+        src="{% static 'images/line-dec.png' %}"
+        class="mx-auto my-6"
+        alt=""
+      />
+
+      <p class="text-lg leading-8 text-slate-600">
+        Meet our certified fitness professionals who are dedicated to helping
+        you achieve your fitness goals through personalized training and expert
+        guidance.
+      </p>
+    </div>
+
+    <!-- Trainer Cards -->
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+
+      <div
+        class="overflow-hidden rounded-3xl bg-white shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl"
+      >
+        <div class="overflow-hidden">
+          <img
+            src="{% static 'images/first-trainer.jpg' %}"
+            class="h-80 w-full object-cover transition duration-500 hover:scale-110"
+            alt="Trainer"
+          />
+        </div>
+
+        <div class="p-7">
+          <span
+            class="text-sm font-semibold uppercase tracking-wide text-orange-500"
+          >
+            Strength Trainer
+          </span>
+
+          <h3 class="mt-2 text-3xl font-bold text-slate-900">Bret D. Bowers</h3>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Expert in strength and conditioning programs focused on improving
+            muscle growth, endurance, and athletic performance.
+          </p>
+
+          <div class="mt-6 flex gap-5 text-xl text-slate-600">
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-behance"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+
+      <div
+        class="overflow-hidden rounded-3xl bg-white shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl"
+      >
+        <div class="overflow-hidden">
+          <img
+            src="{% static 'images/second-trainer.jpg' %}"
+            class="h-80 w-full object-cover transition duration-500 hover:scale-110"
+            alt="Trainer"
+          />
+        </div>
+
+        <div class="p-7">
+          <span
+            class="text-sm font-semibold uppercase tracking-wide text-orange-500"
+          >
+            Muscle Trainer
+          </span>
+
+          <h3 class="mt-2 text-3xl font-bold text-slate-900">
+            Hector T. Daigl
+          </h3>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Specialized in hypertrophy training, nutrition planning, and
+            personalized muscle-building workout programs.
+          </p>
+
+          <div class="mt-6 flex gap-5 text-xl text-slate-600">
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-behance"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+
+      <div
+        class="overflow-hidden rounded-3xl bg-white shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl"
+      >
+        <div class="overflow-hidden">
+          <img
+            src="{% static 'images/third-trainer.jpg' %}"
+            class="h-80 w-full object-cover transition duration-500 hover:scale-110"
+            alt="Trainer"
+          />
+        </div>
+
+        <div class="p-7">
+          <span
+            class="text-sm font-semibold uppercase tracking-wide text-orange-500"
+          >
+            Power Trainer
+          </span>
+
+          <h3 class="mt-2 text-3xl font-bold text-slate-900">Paul D. Newman</h3>
+
+          <p class="mt-4 leading-8 text-slate-600">
+            Focused on functional fitness, powerlifting, and high-performance
+            strength development for athletes.
+          </p>
+
+          <div class="mt-6 flex gap-5 text-xl text-slate-600">
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="#" class="transition hover:text-orange-500">
+              <i class="fab fa-behance"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative overflow-hidden bg-slate-100 pb-20 pt-0">
+  <div class="absolute inset-0"></div>
+
+  <div class="relative mx-auto max-w-4xl px-6 text-center">
+    <h2 class="text-4xl font-extrabold text-slate-600 md:text-5xl">
+      Don't <span class="text-orange-600">Think</span>, Begin
+      <span class="text-orange-600">Today!</span>
+    </h2>
+
+    <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-mist-700">
+      Your transformation starts with a single step. Join our fitness community
+      and unlock your full potential with expert guidance and personalized
+      workout programs.
+    </p>
+
+    <a
+      href="#our-classes"
+      class="mt-10 inline-block rounded-xl bg-white px-8 py-4 font-semibold text-mist-600 shadow-xl transition duration-300 hover:-translate-y-1 hover:bg-slate-100"
+    >
+      Become a Member
+    </a>
+  </div>
+</section>
+
+{% endblock %}

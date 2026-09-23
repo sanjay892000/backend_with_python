@@ -1,0 +1,163 @@
+<header
+  class="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-white/90 backdrop-blur-xl shadow-sm"
+>
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+  >
+    <!-- Logo -->
+    <a
+      href="/"
+      class="text-3xl font-extrabold tracking-wide text-slate-900 transition hover:scale-105"
+    >
+      Training
+      <span class="text-orange-500">Studio</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden items-center gap-10 lg:flex">
+      <li>
+        <a
+          href="{% url "home" %}"
+          class="{% if request.resolver_match.url_name == 'home' %} text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-orange-500 {% else %} text-slate-700 {% endif %} relative font-medium transition duration-300 hover:text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full"
+        >
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="{% url "about" %}"
+          class="{% if request.resolver_match.url_name == 'about' %} text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-orange-500 {% else %} text-slate-700 {% endif %} relative font-medium transition duration-300 hover:text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full"
+        >
+          About
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="{% url "classes" %}"
+          class="{% if request.resolver_match.url_name == 'classes' %} text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-orange-500 {% else %} text-slate-700 {% endif %} relative font-medium transition duration-300 hover:text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full"
+        >
+          Classes
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="{% url "schedules" %}"
+          class="{% if request.resolver_match.url_name == 'schedules' %} text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-orange-500 {% else %} text-slate-700 {% endif %} relative font-medium transition duration-300 hover:text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full"
+        >
+          Schedule
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="{% url "contact" %}"
+          class="{% if request.resolver_match.url_name == 'contact' %} text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-full after:bg-orange-500 {% else %} text-slate-700 {% endif %} relative font-medium transition duration-300 hover:text-orange-500 after:absolute after:-bottom-2 after:left-0 after:h-0.5 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full"
+        >
+          Contact
+        </a>
+      </li>
+    </ul>
+
+    <!-- Right Side -->
+    <div class="hidden items-center gap-4 lg:flex">
+      <a
+        href="{% url "login" %}"
+        class="rounded-xl border border-orange-500 px-5 py-2 font-semibold text-orange-500 transition hover:bg-orange-50"
+      >
+        Login
+      </a>
+
+      <a
+        href="{% url "signup" %}"
+        class="rounded-xl bg-orange-500 px-6 py-2.5 font-semibold text-white shadow-lg shadow-orange-500/30 transition duration-300 hover:-translate-y-1 hover:bg-orange-600"
+      >
+        Sign Up
+      </a>
+    </div>
+
+    <!-- Mobile Button -->
+    <button
+      id="menu-btn"
+      class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 lg:hidden"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 w-7 text-slate-800"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-slate-200 bg-white lg:hidden"
+  >
+    <div class="space-y-1 px-6 py-6">
+      <a
+        href="#top"
+        class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Home
+      </a>
+
+      <a
+        href="#features"
+        class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        About
+      </a>
+
+      <a
+        href="#our-classes"
+        class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Classes
+      </a>
+
+      <a
+        href="#schedule"
+        class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Schedule
+      </a>
+
+      <a
+        href="#contact-us"
+        class="block rounded-lg px-4 py-3 font-medium text-slate-700 transition hover:bg-orange-50 hover:text-orange-600"
+      >
+        Contact
+      </a>
+
+      <div class="mt-5 flex flex-col gap-3">
+        <a
+          href="#"
+          class="rounded-lg border border-orange-500 px-5 py-3 text-center font-semibold text-orange-500"
+        >
+          Login
+        </a>
+
+        <a
+          href="#"
+          class="rounded-lg bg-orange-500 px-5 py-3 text-center font-semibold text-white hover:bg-orange-600"
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+

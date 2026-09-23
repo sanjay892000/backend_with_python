@@ -1,0 +1,83 @@
+<section class="featured-recipes section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="section-heading__tag"> Featured Recipes </span>
+
+      <h2 class="section-heading__title">Discover Delicious & Healthy Meals</h2>
+
+      <p class="section-heading__description">
+        Hand-picked recipes for breakfast, lunch, dinner and healthy lifestyle.
+      </p>
+    </div>
+
+    <div class="recipe-grid">
+      {% for recipe in recipes %}
+
+      <article class="recipe-card">
+        <div class="recipe-card__image">
+          <img
+            src="{{ recipe.image }}"
+            alt="{{ recipe.title }}"
+            loading="lazy"
+          />
+
+          <span class="recipe-card__category"> {{ recipe.category }} </span>
+
+          <button class="recipe-card__wishlist">❤</button>
+        </div>
+
+        <div class="recipe-card__body">
+          <div class="recipe-card__rating">
+            ⭐ {{ recipe.rating }}
+
+            <span> ({{ recipe.review_count }} Reviews) </span>
+          </div>
+
+          <h3 class="recipe-card__title">{{ recipe.title }}</h3>
+
+          <p class="recipe-card__description">{{ recipe.description }}</p>
+
+          <div class="recipe-card__meta">
+            <div class="meta-item">
+              🕒
+
+              <span> {{ recipe.time }} </span>
+            </div>
+
+            <div class="meta-item">
+              🔥
+
+              <span> {{ recipe.calories }} kcal </span>
+            </div>
+
+            <div class="meta-item">
+              👨‍🍳
+
+              <span> {{ recipe.difficulty }} </span>
+            </div>
+          </div>
+
+          <div class="recipe-card__footer">
+            <div class="recipe-card__chef">
+              <img src="{{ recipe.chef_image }}" alt="{{ recipe.chef }}" />
+
+              <span> {{ recipe.chef }} </span>
+            </div>
+
+            <a href="#" class="btn btn-primary"> View Recipe </a>
+          </div>
+        </div>
+      </article>
+
+      {% empty %}
+
+      <h2>No Recipes Found.</h2>
+
+      {% endfor %}
+    </div>
+
+    <div class="featured-recipes__footer">
+      <a href="#" class="btn btn-outline"> Explore All Recipes </a>
+    </div>
+  </div>
+</section>
